@@ -129,8 +129,6 @@ for row in test:
 	w.writerows(row_data)
 	count += 1
 wf.close()
-print ('compare with correct answer:')
-print np.sqrt(avg/240)
 
 
 	
