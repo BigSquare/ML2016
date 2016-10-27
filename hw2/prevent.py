@@ -41,4 +41,4 @@ for i in xrange(4001):
 	else: f_wb[i] = 0
 print 'accuracy'
 print (1-np.mean(np.abs(f_wb - answer)))
-np.save(sys.argv[1], w)
+#np.save(sys.argv[1], w)
