@@ -5,7 +5,11 @@ def sigmoid_arr(x):
 	return 1.0/(1.0+np.exp(-x))
 ###test
 test = np.load('test.npy')
-w = np.load(sys.argv[1]+".npy")
+#w = np.load(sys.argv[1]+".npy")
+w = np.zeros((58,1), dtype = np.float)
+f = open(sys.argv[1], 'r')
+for row in csv.reader(f):
+	w.T[0] = row
 #print f_wb
 wf = open(sys.argv[2], 'w')
 wr  = csv.writer(wf)
