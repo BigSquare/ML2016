@@ -2,6 +2,7 @@ import numpy as np
 import csv
 import sys
 def sigmoid_arr(x):
+	#np.seterr(all='warn')
 	return 1.0/(1.0+np.exp(-x))
 ###test
 test = np.load('test.npy')

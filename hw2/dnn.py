@@ -6,10 +6,11 @@ import sys
 ###adam optimizer
 
 def sigmoid(x):
-	
+	#np.seterr(all='warn')	
 	return 1.0/(1+np.exp(-x))
 def d_sigmoid(x):
 	#return np.multiply(sigmoid(x), 1-sigmoid(x))
+	#np.seterr(all='warn')	
 	return (1.0/(1+np.exp(-x))) * (1-(1.0/(1+np.exp(-x))))
 
 #read in training data
@@ -29,7 +30,7 @@ v_1 = np.zeros((58,36), dtype = np.float)
 m_2 = np.zeros((36, 1), dtype = np.float)
 v_2 = np.zeros((36, 1), dtype = np.float)
 e, t = 1e-8, 0
-Eta, reg = 0.01, 0.05
+Eta, reg = 0.01, 1
 beta1, beta2 = 0.9, 0.999
 
 for i in range(0, 2000, 1):
