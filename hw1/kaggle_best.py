@@ -110,7 +110,7 @@ print avg/5652
 #compare with test case answer
 # read in test_X.csv
 test = np.load('test_7.npy')
-table_ans = np.load('ans.npy')
+
 
 wf = open('kaggle_best.csv', 'w')
 w = csv.writer(wf)
@@ -121,12 +121,10 @@ avg = 0
 for row in test:
 	x = row
 	y = np.dot(x, w_wgt)
-	ans_y = table_ans[count]
-	temp = ans_y - y
-	avg += np.dot(temp, temp)
+	#ans_y = table_ans[count]
+	#temp = ans_y - y
+	#avg += np.dot(temp, temp)
 	row_data = [['id_'+str(count),str(y[0])]]
 	w.writerows(row_data)
 	count += 1
 wf.close()
-print ('compare with correct answer:')
-print np.sqrt(avg/240)
