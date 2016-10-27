@@ -1,2 +1,2 @@
 python readin.py $1 
-python prevent.py $2
+python dnn.py $2
