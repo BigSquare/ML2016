@@ -42,8 +42,6 @@ for i in range(0, 2000, 1):
 	a2 = sigmoid(z2)				#(4001,  1)
 	#backward propagation
 	delta_3 = d_sigmoid(z2) * (-(answer/(a2+1e-30)+(1-answer)/(a2-1+1e-30)))
-	#delta_3 = -(answer - a2)	#(4001,  1)
-	#delta_2 = d_sigmoid(z1) * np.dot(delta_3, w_2.T)
 	delta_2 = np.multiply(d_sigmoid(z1), np.dot(delta_3, w_2.T))
 										#(4001, 40)
 	dw2 = np.dot(a1.T, delta_3)			#(40,  1)
