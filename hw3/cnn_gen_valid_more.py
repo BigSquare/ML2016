@@ -15,9 +15,9 @@ import os
 os.environ["THEANO_FLAGS"]="device=gpu0"
 K.set_image_dim_ordering("th")
 #NOTE restrict GPU loading
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.5
-K.set_session(tf.Session(config=config))
+#config = tf.ConfigProto()
+#config.gpu_options.per_process_gpu_memory_fraction = 0.5
+#K.set_session(tf.Session(config=config))
 
 #load all labeled data and classify 
 all_label = np.load('label.npy')		#10,500,3072
